@@ -38,28 +38,43 @@ public class CharacterController : MonoBehaviour
             targetOffset.z = 0f;
         }
         else if (playerDirection == Direction.East)
+        {
             playerDirection = Direction.North;
+            targetOffset.x = 0f;
+            targetOffset.z = 5f;
+        }
 
         transform.Rotate(0, -90.0f, 0.0f, Space.Self);
-
-
     }
 
     public void TurnRight()
     {
         if (playerDirection == Direction.North)
+        {
             playerDirection = Direction.East;
+            targetOffset.x = 5f;
+            targetOffset.z = 0f;
+        }
         else if (playerDirection == Direction.East)
+        {
             playerDirection = Direction.South;
+            targetOffset.x = 0f;
+            targetOffset.z = -5f;
+        }
         else if (playerDirection == Direction.South)
+        {
             playerDirection = Direction.West;
+            targetOffset.x = -5f;
+            targetOffset.z = 0f;
+        }
         else if (playerDirection == Direction.West)
+        {
             playerDirection = Direction.North;
+            targetOffset.x = 0f;
+            targetOffset.z = 5f;
+        }
 
         transform.Rotate(0, 90.0f, 0.0f, Space.Self);
-
-        targetOffset.x = 5f;
-        targetOffset.z = 0f;
     }
 
     public void MoveForward()
