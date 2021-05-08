@@ -5,7 +5,20 @@ using UnityEngine;
 public class WordUI : MonoBehaviour
 {
     public GameObject wordTypesPanel, exclamationsPanel;
-    public Transform A;
+    public Transform A, B, C, D, E, F, G, H;
+    List<Transform> GridRow = new List<Transform>();
+
+    private void Start()
+    {
+        GridRow.Add(A);
+        GridRow.Add(B);
+        GridRow.Add(C);
+        GridRow.Add(D);
+        GridRow.Add(E);
+        GridRow.Add(F);
+        GridRow.Add(G);
+        GridRow.Add(H);
+    }
 
     public void SwitchButton()
     {
@@ -50,8 +63,41 @@ public class WordUI : MonoBehaviour
     public void HelloButton()
     {
         GameObject helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
-        //aBlock.transform.SetParent(A4);
-        //setParent1(helloCard);
-        helloCard.transform.SetParent(A, false);
+        SetGridParent(helloCard);
+    }
+
+
+    private void SetGridParent(GameObject block)
+    {
+        if (GridRow[0].childCount != 0 && GridRow[1].childCount != 0 && GridRow[2].childCount != 0 && GridRow[3].childCount != 0 && GridRow[4].childCount != 0 && GridRow[5].childCount != 0 && GridRow[6].childCount != 0 && GridRow[7].childCount != 0)
+        {
+            Destroy(block);
+        }
+        else
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                if (GridRow[i].childCount == 0)
+                {
+                    block.transform.SetParent(GridRow[i], false);
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+    }
+
+    public void ClearButton()
+    {
+        for (int i = 0; i < GridRow.Count; i++)
+        {
+            if (GridRow[i].childCount > 0)
+            {
+                Destroy(GridRow[i].transform.GetChild(0).gameObject);
+            }
+        }
     }
 }
