@@ -12,9 +12,12 @@ public class CharacterController : MonoBehaviour
     public Vector3 targetOffset = Vector3.forward * 10f;
     public float speed = 1f;
 
+
     void Start()
     {
-        playerDirection = Direction.North;
+        playerDirection = Direction.East;
+        targetOffset.x = 5f;
+        targetOffset.z = 0f;
     }
 
     public void TurnLeft()
@@ -45,6 +48,9 @@ public class CharacterController : MonoBehaviour
         }
 
         transform.Rotate(0, -90.0f, 0.0f, Space.Self);
+
+        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
+        checkTagScript.CheckNPCTag();
     }
 
     public void TurnRight()
@@ -75,6 +81,9 @@ public class CharacterController : MonoBehaviour
         }
 
         transform.Rotate(0, 90.0f, 0.0f, Space.Self);
+
+        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
+        checkTagScript.CheckNPCTag();
     }
 
     public void MoveForward()
@@ -107,6 +116,9 @@ public class CharacterController : MonoBehaviour
 
         // We have arrived. Ensure we hit it exactly.
         transform.position = targetPosition;
+
+        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
+        checkTagScript.CheckNPCTag();
     }
 }
 
