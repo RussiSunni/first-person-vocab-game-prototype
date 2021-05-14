@@ -17,15 +17,6 @@ public class Alien : MonoBehaviour
         helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
         SetGridParent(helloCard);
     }
-
-    public void SayNothing()
-    {
-        if (GridRow[0].childCount > 0)
-        {
-            Destroy(GridRow[0].transform.GetChild(0).gameObject);
-        }
-    }
-
     private void SetGridParent(GameObject block)
     {
         block.transform.SetParent(GridRow[0], false);

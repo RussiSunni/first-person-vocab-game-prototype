@@ -7,10 +7,14 @@ public class CharacterController : MonoBehaviour
     private enum Direction { North, East, South, West };
     Direction playerDirection;
 
+    int playerDirectionInt;
+
     // Set your parameters in the Inspector.
     public float waitSeconds = 60f;
     public Vector3 targetOffset = Vector3.forward * 10f;
     public float speed = 1f;
+
+    public static Vector2 gridSquare = new Vector2(0, 0);
 
 
     void Start()
@@ -49,8 +53,25 @@ public class CharacterController : MonoBehaviour
 
         transform.Rotate(0, -90.0f, 0.0f, Space.Self);
 
-        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
-        checkTagScript.CheckNPCTag();
+        if (playerDirection == Direction.North)
+        {
+            playerDirectionInt = 0;
+        }
+        else if (playerDirection == Direction.East)
+        {
+            playerDirectionInt = 1;
+        }
+        else if (playerDirection == Direction.South)
+        {
+            playerDirectionInt = 2;
+        }
+        else if (playerDirection == Direction.West)
+        {
+            playerDirectionInt = 3;
+        }
+
+        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
+        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
     }
 
     public void TurnRight()
@@ -82,8 +103,26 @@ public class CharacterController : MonoBehaviour
 
         transform.Rotate(0, 90.0f, 0.0f, Space.Self);
 
-        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
-        checkTagScript.CheckNPCTag();
+        if (playerDirection == Direction.North)
+        {
+            playerDirectionInt = 0;
+        }
+        else if (playerDirection == Direction.East)
+        {
+            playerDirectionInt = 1;
+        }
+        else if (playerDirection == Direction.South)
+        {
+            playerDirectionInt = 2;
+        }
+        else if (playerDirection == Direction.West)
+        {
+            playerDirectionInt = 3;
+        }
+
+        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
+        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
+
     }
 
     public void MoveForward()
@@ -117,8 +156,36 @@ public class CharacterController : MonoBehaviour
         // We have arrived. Ensure we hit it exactly.
         transform.position = targetPosition;
 
-        var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
-        checkTagScript.CheckNPCTag();
+
+        if (playerDirection == Direction.North)
+        {
+            gridSquare = gridSquare + new Vector2(0, 1);
+            playerDirectionInt = 0;
+        }
+        else if (playerDirection == Direction.East)
+        {
+            gridSquare = gridSquare + new Vector2(1, 0);
+            playerDirectionInt = 1;
+        }
+        else if (playerDirection == Direction.South)
+        {
+            gridSquare = gridSquare + new Vector2(0, -1);
+            playerDirectionInt = 2;
+        }
+        else if (playerDirection == Direction.West)
+        {
+            gridSquare = gridSquare + new Vector2(-1, 0);
+            playerDirectionInt = 3;
+        }
+
+
+
+        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
+        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
+        //Scene01.GridTrigger(gridSquare, playerDirectionInt);
+
+        //var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
+        //checkTagScript.CheckNPCTag();
     }
 }
 

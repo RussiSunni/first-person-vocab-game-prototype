@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Elf : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Transform A;
+    List<Transform> GridRow = new List<Transform>();
+    GameObject helloCard;
 
+    private void Start()
+    {
+        GridRow.Add(A);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SayHello()
     {
-
+        helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
+        SetGridParent(helloCard);
+    }
+    private void SetGridParent(GameObject block)
+    {
+        block.transform.SetParent(GridRow[0], false);
     }
 }
