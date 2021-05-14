@@ -6724,7 +6724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ff6d1b24419dc5796e1e5b6648a76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC: {fileID: 1270281363}
+  Alien: {fileID: 1270281363}
+  Elf: {fileID: 1141612706}
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0

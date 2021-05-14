@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class CheckTag : MonoBehaviour
 {
-    public GameObject NPC;
+    public GameObject Alien, Elf;
+    private List<GameObject> NPCs = new List<GameObject>();
+
+    private void Start()
+    {
+        NPCs.Add(Alien);
+        NPCs.Add(Elf);
+    }
     public void CheckNPCTag()
     {
-        //  for (int i = 0; i < solidObjects.Length; i++)
+        for (int i = 0; i < NPCs.Count; i++)
         {
-            Vector3 viewPos = GetComponent<Camera>().WorldToViewportPoint(NPC.transform.position);
+            Vector3 viewPos = GetComponent<Camera>().WorldToViewportPoint(NPCs[i].transform.position);
             // Vector3 rearViewPos = camera.WorldToViewportPoint(openings[i].transform.position) + new Vector3(0, 0, -5.4f);
-            Debug.Log(viewPos);
+            //  Debug.Log(viewPos);
 
-            //3D
-            if (viewPos.z > 5.3f && viewPos.z < 5.5f && viewPos.x > 0.4f && viewPos.x < 0.6f)
+
+            if (viewPos.z > 2.4f && viewPos.z < 2.6f && viewPos.x > 0.4f && viewPos.x < 0.6f)
             {
-                Debug.Log("found");
-            }
-            else if (viewPos.z > 2.4f && viewPos.z < 2.6f && viewPos.x > 0.4f && viewPos.x < 0.6f)
-            {
-                Debug.Log("found");
+                // var alienScript = GameObject.Find("Alien").GetComponent<Alien>();
+                // alienScript.SayHello();
+                // break;
             }
             else
             {
-                Debug.Log("not found");
+                //var alienScript = GameObject.Find("Alien").GetComponent<Alien>();
+                //alienScript.SayNothing();
             }
         }
         //Debug.Log(canWalkThroughNextWall);
