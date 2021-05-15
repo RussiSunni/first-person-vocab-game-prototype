@@ -28,6 +28,16 @@ public class WordUI : MonoBehaviour
             GetComponent<CanvasGroup>().alpha = 1f;
             transform.SetSiblingIndex(6);
         }
+        else if (exclamationsPanel.GetComponent<CanvasGroup>().interactable == true)
+        {
+            exclamationsPanel.GetComponent<CanvasGroup>().interactable = false;
+            exclamationsPanel.GetComponent<CanvasGroup>().alpha = 0f;
+            exclamationsPanel.transform.SetSiblingIndex(0);
+
+            wordTypesPanel.GetComponent<CanvasGroup>().interactable = true;
+            wordTypesPanel.GetComponent<CanvasGroup>().alpha = 1f;
+            wordTypesPanel.transform.SetSiblingIndex(6);
+        }
         else
         {
             GetComponent<CanvasGroup>().interactable = false;
@@ -48,22 +58,18 @@ public class WordUI : MonoBehaviour
             wordTypesPanel.GetComponent<CanvasGroup>().alpha = 0f;
             wordTypesPanel.transform.SetSiblingIndex(1);
         }
-        else
-        {
-            exclamationsPanel.GetComponent<CanvasGroup>().interactable = false;
-            exclamationsPanel.GetComponent<CanvasGroup>().alpha = 0f;
-            exclamationsPanel.transform.SetSiblingIndex(0);
-
-            wordTypesPanel.GetComponent<CanvasGroup>().interactable = true;
-            wordTypesPanel.GetComponent<CanvasGroup>().alpha = 1f;
-            wordTypesPanel.transform.SetSiblingIndex(6);
-        }
     }
 
     public void HelloButton()
     {
         GameObject helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
         SetGridParent(helloCard);
+    }
+
+    public void HiButton()
+    {
+        GameObject hiCard = Instantiate(Resources.Load("Prefabs/Hi")) as GameObject;
+        SetGridParent(hiCard);
     }
 
 

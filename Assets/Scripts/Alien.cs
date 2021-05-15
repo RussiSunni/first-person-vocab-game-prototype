@@ -16,6 +16,7 @@ public class Alien : MonoBehaviour
     {
         helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
         SetGridParent(helloCard);
+        SoundManager.playSound(SoundManager.alienHello);
     }
     private void SetGridParent(GameObject block)
     {

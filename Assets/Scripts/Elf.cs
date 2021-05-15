@@ -17,6 +17,7 @@ public class Elf : MonoBehaviour
     {
         helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
         SetGridParent(helloCard);
+        SoundManager.playSound(SoundManager.elfHello);
     }
     private void SetGridParent(GameObject block)
     {
