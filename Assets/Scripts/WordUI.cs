@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class WordUI : MonoBehaviour
 {
     public GameObject wordTypesPanel, exclamationsPanel;
     public Transform A, B, C, D, E, F, G, H;
+    public Button helloCardBtn;
+    public Button exclamationsBtn;
+    public Sprite exclamationsBtnSprite, helloCardSprite;
     List<Transform> GridRow = new List<Transform>();
 
     private void Start()
@@ -46,6 +49,12 @@ public class WordUI : MonoBehaviour
         }
     }
 
+    public void TurnOnExclamationsButton()
+    {
+        exclamationsBtn.interactable = true;
+        exclamationsBtn.image.sprite = exclamationsBtnSprite;
+    }
+
     public void ExclamationsButton()
     {
         if (exclamationsPanel.GetComponent<CanvasGroup>().interactable == false)
@@ -60,6 +69,12 @@ public class WordUI : MonoBehaviour
         }
     }
 
+
+    public void TurnOnHelloButton()
+    {
+        helloCardBtn.interactable = true;
+        helloCardBtn.image.sprite = helloCardSprite;
+    }
     public void HelloButton()
     {
         GameObject helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;

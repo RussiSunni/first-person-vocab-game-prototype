@@ -10,7 +10,7 @@ public class CheckTag : MonoBehaviour
     private void Start()
     {
         NPCs.Add(Alien);
-        NPCs.Add(Elf);
+        NPCs.Add(Elf); 
     }
     public void CheckNPCTag()
     {

@@ -8,11 +8,12 @@ public class CheckAnswer : MonoBehaviour
 
     public void Go()
     {
-        //  if (cameraPos.z == -5.4f && cameraPos.x == 0f && direction == "north")
+        if (CharacterController.gridSquare == new Vector2(3, 1) && CharacterController.playerDirectionInt == 0)
         {
             if (A.transform.GetChild(0).gameObject.name == "Hello(Clone)")
             {
-                print("test");
+                var fairyScript = GameObject.Find("Fairy").GetComponent<Fairy>();
+                fairyScript.Exercise01();
             }
         }
     }

@@ -77,20 +77,18 @@ public class Scene01 : MonoBehaviour
                     break;
             }
         }
-        else if (gridNumber == new Vector2(0, 0))
+        else if (gridNumber == new Vector2(3, 0))
         {
 
         }
-        else if (gridNumber == new Vector2(0, 0))
+        else if (gridNumber == new Vector2(3, 1))
         {
 
         }
-        else if (gridNumber == new Vector2(0, 0))
+        else if (gridNumber == new Vector2(3, 2))
         {
 
         }
     }
-
-
 
 }

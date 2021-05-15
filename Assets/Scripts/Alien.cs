@@ -22,4 +22,6 @@ public class Alien : MonoBehaviour
     {
         block.transform.SetParent(GridRow[0], false);
     }
+
+
 }

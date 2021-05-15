@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     private enum Direction { North, East, South, West };
     Direction playerDirection;
 
-    int playerDirectionInt;
+    public static int playerDirectionInt;
 
     // Set your parameters in the Inspector.
     public float waitSeconds = 60f;

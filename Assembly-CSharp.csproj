@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\CheckAnswer.cs" />
      <Compile Include="Assets\Scripts\CheckTag.cs" />
      <Compile Include="Assets\Scripts\Elf.cs" />
+     <Compile Include="Assets\Scripts\Fairy.cs" />
+     <Compile Include="Assets\Scripts\PlayerWords.cs" />
      <Compile Include="Assets\Scripts\Scene01.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\WordUI.cs" />
