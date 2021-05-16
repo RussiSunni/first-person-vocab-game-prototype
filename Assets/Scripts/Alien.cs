@@ -23,5 +23,9 @@ public class Alien : MonoBehaviour
         block.transform.SetParent(GridRow[0], false);
     }
 
+    public void Exercise01()
+    {
+        SoundManager.playSound(SoundManager.effectCorrect);
+    }
 
 }

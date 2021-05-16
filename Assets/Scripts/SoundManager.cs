@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip alienHello, elfHello, fairyHello, effectCorrect;
+    public static AudioClip alienHello, elfHello, fairyHello, effectCorrect, effectPop;
     static AudioSource audioSrc;
 
     void Start()
@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
         elfHello = Resources.Load<AudioClip>("Sounds/Elf_Hello");
         fairyHello = Resources.Load<AudioClip>("Sounds/Fairy_Hello");
         effectCorrect = Resources.Load<AudioClip>("Sounds/Effect_Correct");
+        effectPop = Resources.Load<AudioClip>("Sounds/Effect_Pop");
     }
 
     public static void playSound(AudioClip audioclip)

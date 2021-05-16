@@ -23,6 +23,7 @@ public class PlayerWords : MonoBehaviour
                     var wordUIScript = GameObject.Find("WordUI").GetComponent<WordUI>();
                     wordUIScript.TurnOnExclamationsButton();
                     wordUIScript.TurnOnHelloButton();
+                    SoundManager.playSound(SoundManager.effectPop);
                 };
     }
 
