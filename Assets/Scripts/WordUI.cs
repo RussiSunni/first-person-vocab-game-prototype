@@ -40,6 +40,8 @@ public class WordUI : MonoBehaviour
             wordTypesPanel.GetComponent<CanvasGroup>().interactable = true;
             wordTypesPanel.GetComponent<CanvasGroup>().alpha = 1f;
             wordTypesPanel.transform.SetSiblingIndex(6);
+
+            SoundManager.playSound(SoundManager.effectPageTurn);
         }
         else
         {
@@ -66,6 +68,8 @@ public class WordUI : MonoBehaviour
             wordTypesPanel.GetComponent<CanvasGroup>().interactable = false;
             wordTypesPanel.GetComponent<CanvasGroup>().alpha = 0f;
             wordTypesPanel.transform.SetSiblingIndex(1);
+
+            SoundManager.playSound(SoundManager.effectPageTurn);
         }
     }
 

@@ -46,11 +46,14 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Alien.cs" />
+     <Compile Include="Assets\Scripts\Cat.cs" />
      <Compile Include="Assets\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Scripts\CheckAnswer.cs" />
      <Compile Include="Assets\Scripts\CheckTag.cs" />
      <Compile Include="Assets\Scripts\Elf.cs" />
      <Compile Include="Assets\Scripts\Fairy.cs" />
+     <Compile Include="Assets\Scripts\FairyCall.cs" />
+     <Compile Include="Assets\Scripts\FairyHelp.cs" />
      <Compile Include="Assets\Scripts\PlayerWords.cs" />
      <Compile Include="Assets\Scripts\Scene01.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
