@@ -22,6 +22,7 @@ public class CharacterController : MonoBehaviour
         playerDirection = Direction.East;
         targetOffset.x = 5f;
         targetOffset.z = 0f;
+        playerDirectionInt = 1;
     }
 
     public void TurnLeft()
@@ -127,7 +128,10 @@ public class CharacterController : MonoBehaviour
 
     public void MoveForward()
     {
-        StartCoroutine(MoveOverTime());
+        if (!Scene01.isWayBlocked)
+            StartCoroutine(MoveOverTime());
+        else
+            SoundManager.playSound(SoundManager.effectBump);
     }
 
     IEnumerator MoveOverTime()

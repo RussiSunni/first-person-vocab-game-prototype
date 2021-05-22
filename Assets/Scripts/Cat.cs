@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    void OnMouseUp()
+    private void Update()
     {
-        /*Do whatever here as per your need*/
-    }
-
-
-    void OnMouseDown()
-    {
-        // Debug.Log("test");
-
-        // GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0, 1);
+        if (CharacterController.playerDirectionInt == 0)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+        else if (CharacterController.playerDirectionInt == 1)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        }
+        else if (CharacterController.playerDirectionInt == 2)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else if (CharacterController.playerDirectionInt == 3)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        }
     }
 }

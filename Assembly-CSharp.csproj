@@ -57,6 +57,8 @@
      <Compile Include="Assets\Scripts\PlayerWords.cs" />
      <Compile Include="Assets\Scripts\Scene01.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\StageComplete.cs" />
+     <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\WordUI.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
