@@ -13,6 +13,11 @@ public class Fairy : MonoBehaviour
         GridRow.Add(A);
     }
 
+    void OnMouseDown()
+    {
+        SoundManager.playSound(SoundManager.fairyHey);
+    }
+
     public void Exercise01()
     {
         SoundManager.playSound(SoundManager.effectCorrect);

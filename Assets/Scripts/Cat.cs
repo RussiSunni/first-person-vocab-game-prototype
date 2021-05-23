@@ -23,4 +23,9 @@ public class Cat : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
     }
+
+    void OnMouseDown()
+    {
+        SoundManager.playSound(SoundManager.effectCat);
+    }
 }

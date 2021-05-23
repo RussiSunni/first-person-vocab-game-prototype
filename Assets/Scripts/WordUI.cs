@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WordUI : MonoBehaviour
 {
-    public GameObject wordTypesPanel, exclamationsPanel;
+    public GameObject wordTypesPanel, exclamationsPanel, nounsPanel;
     public Transform A, B, C, D, E, F, G, H;
-    public Button helloCardBtn;
-    public Button exclamationsBtn;
-    public Sprite exclamationsBtnSprite, helloCardSprite;
+    public Button helloCardBtn, catCardBtn;
+    public Button exclamationsBtn, nounsBtn;
+    public Sprite exclamationsBtnSprite, nounsBtnSprite, helloCardSprite, catCardSprite;
     List<Transform> GridRow = new List<Transform>();
 
     private void Start()
@@ -73,11 +73,36 @@ public class WordUI : MonoBehaviour
         }
     }
 
+    public void NounsButton()
+    {
+        if (nounsPanel.GetComponent<CanvasGroup>().interactable == false)
+        {
+            nounsPanel.GetComponent<CanvasGroup>().interactable = true;
+            nounsPanel.GetComponent<CanvasGroup>().alpha = 1f;
+            nounsPanel.transform.SetSiblingIndex(6);
 
+            wordTypesPanel.GetComponent<CanvasGroup>().interactable = false;
+            wordTypesPanel.GetComponent<CanvasGroup>().alpha = 0f;
+            wordTypesPanel.transform.SetSiblingIndex(1);
+
+            SoundManager.playSound(SoundManager.effectPageTurn);
+        }
+    }
+
+    public void TurnOnNounsButton()
+    {
+        nounsBtn.interactable = true;
+        nounsBtn.image.sprite = nounsBtnSprite;
+    }
     public void TurnOnHelloButton()
     {
         helloCardBtn.interactable = true;
         helloCardBtn.image.sprite = helloCardSprite;
+    }
+    public void TurnOnCatButton()
+    {
+        catCardBtn.interactable = true;
+        catCardBtn.image.sprite = catCardSprite;
     }
     public void HelloButton()
     {

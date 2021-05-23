@@ -71,8 +71,8 @@ public class CharacterController : MonoBehaviour
             playerDirectionInt = 3;
         }
 
-        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
-        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
+        var stage01Script = GameObject.Find("Code").GetComponent<Stage01>();
+        stage01Script.GridTrigger(gridSquare, playerDirectionInt);
     }
 
     public void TurnRight()
@@ -121,15 +121,19 @@ public class CharacterController : MonoBehaviour
             playerDirectionInt = 3;
         }
 
-        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
-        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
+        var stage01Script = GameObject.Find("Code").GetComponent<Stage01>();
+        stage01Script.GridTrigger(gridSquare, playerDirectionInt);
 
     }
 
     public void MoveForward()
     {
-        if (!Scene01.isWayBlocked)
+        if (!Stage01.isWayBlocked)
             StartCoroutine(MoveOverTime());
+        else if (gridSquare == new Vector2(6, 0))
+        {
+            SoundManager.playSound(SoundManager.effectDog);
+        }
         else
             SoundManager.playSound(SoundManager.effectBump);
     }
@@ -184,8 +188,8 @@ public class CharacterController : MonoBehaviour
 
 
 
-        var scene01Script = GameObject.Find("Code").GetComponent<Scene01>();
-        scene01Script.GridTrigger(gridSquare, playerDirectionInt);
+        var stage01Script = GameObject.Find("Code").GetComponent<Stage01>();
+        stage01Script.GridTrigger(gridSquare, playerDirectionInt);
         //Scene01.GridTrigger(gridSquare, playerDirectionInt);
 
         //var checkTagScript = GameObject.Find("Main Camera").GetComponent<CheckTag>();
