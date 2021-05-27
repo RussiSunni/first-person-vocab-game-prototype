@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip alienHello, elfHello, fairyHello, fairyHey, effectCorrect, effectPop, effectPageTurn, effectBump, effectTree, effectCat, effectDog, musicEndStage;
+    public static AudioClip alienHello, alienHey, elfHello, elfHey, fairyHello, fairyHey, effectCorrect, effectPop, effectPageTurn, effectBump, effectTree, effectCat, effectDog, musicEndStage;
     static AudioSource audioSrc;
 
     void Start()
     {
         audioSrc = GetComponent<AudioSource>();
         alienHello = Resources.Load<AudioClip>("Sounds/Alien_Hello");
+        alienHey = Resources.Load<AudioClip>("Sounds/Alien_Hey");
         elfHello = Resources.Load<AudioClip>("Sounds/Elf_Hello");
+        elfHey = Resources.Load<AudioClip>("Sounds/Elf_Hey");
         fairyHello = Resources.Load<AudioClip>("Sounds/Fairy_Hello");
         fairyHey = Resources.Load<AudioClip>("Sounds/Fairy_Hey");
         effectCorrect = Resources.Load<AudioClip>("Sounds/Effect_Correct");

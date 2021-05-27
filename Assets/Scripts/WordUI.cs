@@ -6,9 +6,9 @@ public class WordUI : MonoBehaviour
 {
     public GameObject wordTypesPanel, exclamationsPanel, nounsPanel;
     public Transform A, B, C, D, E, F, G, H;
-    public Button helloCardBtn, catCardBtn;
+    public Button helloCardBtn, catCardBtn, dogCardBtn;
     public Button exclamationsBtn, nounsBtn;
-    public Sprite exclamationsBtnSprite, nounsBtnSprite, helloCardSprite, catCardSprite;
+    public Sprite exclamationsBtnSprite, nounsBtnSprite, helloCardSprite, catCardSprite, dogCardSprite;
     List<Transform> GridRow = new List<Transform>();
 
     private void Start()
@@ -36,6 +36,19 @@ public class WordUI : MonoBehaviour
             exclamationsPanel.GetComponent<CanvasGroup>().interactable = false;
             exclamationsPanel.GetComponent<CanvasGroup>().alpha = 0f;
             exclamationsPanel.transform.SetSiblingIndex(0);
+
+            wordTypesPanel.GetComponent<CanvasGroup>().interactable = true;
+            wordTypesPanel.GetComponent<CanvasGroup>().alpha = 1f;
+            wordTypesPanel.transform.SetSiblingIndex(6);
+
+            SoundManager.playSound(SoundManager.effectPageTurn);
+        }
+
+        else if (nounsPanel.GetComponent<CanvasGroup>().interactable == true)
+        {
+            nounsPanel.GetComponent<CanvasGroup>().interactable = false;
+            nounsPanel.GetComponent<CanvasGroup>().alpha = 0f;
+            nounsPanel.transform.SetSiblingIndex(0);
 
             wordTypesPanel.GetComponent<CanvasGroup>().interactable = true;
             wordTypesPanel.GetComponent<CanvasGroup>().alpha = 1f;
@@ -91,8 +104,11 @@ public class WordUI : MonoBehaviour
 
     public void TurnOnNounsButton()
     {
-        nounsBtn.interactable = true;
-        nounsBtn.image.sprite = nounsBtnSprite;
+        if (nounsBtn.interactable == false)
+        {
+            nounsBtn.interactable = true;
+            nounsBtn.image.sprite = nounsBtnSprite;
+        }
     }
     public void TurnOnHelloButton()
     {
@@ -104,18 +120,28 @@ public class WordUI : MonoBehaviour
         catCardBtn.interactable = true;
         catCardBtn.image.sprite = catCardSprite;
     }
+    public void TurnOnDogButton()
+    {
+        dogCardBtn.interactable = true;
+        dogCardBtn.image.sprite = dogCardSprite;
+    }
     public void HelloButton()
     {
         GameObject helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
         SetGridParent(helloCard);
     }
 
-    public void HiButton()
+    public void CatButton()
     {
-        GameObject hiCard = Instantiate(Resources.Load("Prefabs/Hi")) as GameObject;
-        SetGridParent(hiCard);
+        GameObject catCard = Instantiate(Resources.Load("Prefabs/Cat")) as GameObject;
+        SetGridParent(catCard);
     }
 
+    public void DogButton()
+    {
+        GameObject dogCard = Instantiate(Resources.Load("Prefabs/Dog")) as GameObject;
+        SetGridParent(dogCard);
+    }
 
     private void SetGridParent(GameObject block)
     {

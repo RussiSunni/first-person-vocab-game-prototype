@@ -20,8 +20,8 @@ public class FairyCall : MonoBehaviour
             isFairyCalled = false;
             fairyBtn.GetComponent<CanvasGroup>().alpha = 0f;
 
-            var fairyHelpScript = GameObject.Find("Fairy").GetComponent<FairyHelp>();
-            fairyHelpScript.Deselect(); 
+            var fairyHelpScript = GameObject.Find("FairyCompanion").GetComponent<FairyHelp>();
+            fairyHelpScript.Deselect();
         }
     }
 }

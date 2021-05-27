@@ -9,4 +9,10 @@ public class Dog : MonoBehaviour
     {
         SoundManager.playSound(SoundManager.effectDog);
     }
+
+    public void ChangePosition()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        transform.Rotate(0, 90, 0);
+    }
 }

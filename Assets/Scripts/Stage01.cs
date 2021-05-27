@@ -16,8 +16,8 @@ public class Stage01 : MonoBehaviour
     }
     public void GridTrigger(Vector2 gridNumber, int direction)
     {
-        Debug.Log(gridNumber);
-        Debug.Log(direction);
+        //Debug.Log(gridNumber);
+        // Debug.Log(direction);
 
         if (GridRow[0].childCount > 0)
         {

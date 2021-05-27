@@ -5,7 +5,7 @@ using UnityEngine;
 public class FairyHelp : MonoBehaviour
 {
     bool isSelected;
-    GameObject selectedObject, catCard;
+    GameObject selectedObject, catCard, dogCard;
     public Transform A;
     RaycastHit hit;
 
@@ -34,6 +34,15 @@ public class FairyHelp : MonoBehaviour
                             {
                                 catCard = Instantiate(Resources.Load("Prefabs/Cat")) as GameObject;
                                 SetGridParent(catCard);
+                                //SoundManager.playSound(SoundManager.elfHello);
+                            }
+                        }
+                        else if (hit.transform.gameObject.name == "Dog")
+                        {
+                            if (A.childCount == 0)
+                            {
+                                dogCard = Instantiate(Resources.Load("Prefabs/Dog")) as GameObject;
+                                SetGridParent(dogCard);
                                 //SoundManager.playSound(SoundManager.elfHello);
                             }
                         }

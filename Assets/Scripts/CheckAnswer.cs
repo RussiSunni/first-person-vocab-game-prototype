@@ -38,6 +38,17 @@ public class CheckAnswer : MonoBehaviour
             }
         }
 
+        // Dog
+        else if (CharacterController.gridSquare == new Vector2(6, 0) && CharacterController.playerDirectionInt == 1)
+        {
+            if (A.transform.GetChild(0).gameObject.name == "Hello(Clone)" && B.transform.GetChild(0).gameObject.name == "Dog(Clone)")
+            {
+                var dogScript = GameObject.Find("Dog").GetComponent<Dog>();
+                dogScript.ChangePosition();
+                Debug.Log("dog");
+            }
+        }
+
 
         var wordUIScript = GameObject.Find("WordUI").GetComponent<WordUI>();
         wordUIScript.ClearButton();

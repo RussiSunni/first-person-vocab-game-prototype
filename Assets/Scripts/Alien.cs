@@ -12,8 +12,6 @@ public class Alien : MonoBehaviour
         GridRow.Add(A);
     }
 
-
-
     public void SayHello()
     {
         helloCard = Instantiate(Resources.Load("Prefabs/Hello")) as GameObject;
@@ -48,6 +46,11 @@ public class Alien : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
         }
+    }
+
+    void OnMouseDown()
+    {
+        SoundManager.playSound(SoundManager.alienHey);
     }
 
 }
