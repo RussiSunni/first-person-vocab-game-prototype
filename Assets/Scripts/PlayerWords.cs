@@ -19,14 +19,14 @@ public class PlayerWords : MonoBehaviour
         {
             if (A.GetChild(0).name == "Hello(Clone)")
             {
+                Destroy(A.GetChild(0).gameObject);
+                SoundManager.playSound(SoundManager.effectPop);
                 if (!hasHelloCard)
                 {
-                    Destroy(A.GetChild(0).gameObject);
                     hasHelloCard = true;
                     var wordUIScript = GameObject.Find("WordUI").GetComponent<WordUI>();
                     wordUIScript.TurnOnExclamationsButton();
                     wordUIScript.TurnOnHelloButton();
-                    SoundManager.playSound(SoundManager.effectPop);
                 }
             }
             else if (A.GetChild(0).name == "Cat(Clone)")

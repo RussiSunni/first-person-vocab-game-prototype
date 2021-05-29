@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\WordUI.cs" />
+     <Compile Include="Assets\Scripts\version 2\V2Alien.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

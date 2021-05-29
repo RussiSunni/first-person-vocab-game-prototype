@@ -7,10 +7,13 @@ public class Elf : MonoBehaviour
     public Transform A;
     List<Transform> GridRow = new List<Transform>();
     GameObject helloCard;
+    private SpriteRenderer spriteRenderer;
+
 
     private void Start()
     {
         GridRow.Add(A);
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     public void SayHello()
@@ -28,6 +31,7 @@ public class Elf : MonoBehaviour
     public void Exercise01()
     {
         SoundManager.playSound(SoundManager.effectCorrect);
+        spriteRenderer.flipX = true;
     }
 
     private void Update()
