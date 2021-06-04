@@ -61,8 +61,13 @@
      <Compile Include="Assets\Scripts\StageComplete.cs" />
      <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
+     <Compile Include="Assets\Scripts\V2CharacterController.cs" />
      <Compile Include="Assets\Scripts\WordUI.cs" />
+     <Compile Include="Assets\Scripts\version 2\MainBookBtn.cs" />
      <Compile Include="Assets\Scripts\version 2\V2Alien.cs" />
+     <Compile Include="Assets\Scripts\version 2\V2CheckAnswer.cs" />
+     <Compile Include="Assets\Scripts\version 2\V2Stage01.cs" />
+     <Compile Include="Assets\Scripts\version 2\V2WordUI.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/jonathan/Work/Ecomap/App/Unity/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
